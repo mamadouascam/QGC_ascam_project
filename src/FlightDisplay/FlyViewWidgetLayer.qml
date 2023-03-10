@@ -106,10 +106,11 @@ Item {
         visible:            !multiVehiclePanelSelector.showSingleVehiclePanel
     }
 
-    FlyViewInstrumentPanel {
+   /* FlyViewInstrumentPanel {
         id:                         instrumentPanel
         anchors.margins:            _toolsMargin
-        anchors.top:                multiVehiclePanelSelector.visible ? multiVehiclePanelSelector.bottom : parent.top
+//        anchors.top:                multiVehiclePanelSelector.visible ? multiVehiclePanelSelector.bottom : parent.top
+        anchors.bottom:                multiVehiclePanelSelector.visible ? multiVehiclePanelSelector.bottom : parent.bottom
         anchors.right:              parent.right
         width:                      _rightPanelWidth
         spacing:                    _toolsMargin
@@ -117,7 +118,46 @@ Item {
         availableHeight:            parent.height - y - _toolsMargin
 
         property real rightInset: visible ? parent.width - x : 0
+    }*/
+
+    QGCCompassWidget { // компас
+        id:                         compass
+//////////        anchors.horizontalCenter:   parent.horizontalCenter
+//////////        anchors.topMargin:          _outerMargin * 2
+//////////        anchors.topMargin:          _outerMargin
+        anchors.topMargin:          50
+        anchors.top:                parent.top
+        anchors.rightMargin:        _margins * 4
+        anchors.right:              parent.right
+        size:                       200
+        vehicle:                    globals.activeVehicle
     }
+
+    QGCAttitudeWidget { // авиагоризонт
+        id:                         attitude
+//////////        anchors.horizontalCenter:   parent.horizontalCenter
+//////////        anchors.topMargin:          _outerMargin
+//////////        anchors.topMargin:          _outerMargin * 2
+        anchors.bottomMargin:       _margins * 6
+        anchors.bottom:             parent.bottom
+        anchors.rightMargin:        _margins * 4
+        anchors.right:              parent.right
+        size:                       200
+        vehicle:                    globals.activeVehicle
+    }
+//Added
+    DisconnectButtonIndicator {
+
+    }
+
+    Loader {
+        id: _linkSettings
+        width: 500
+        height: 375
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.verticalCenter: parent.verticalCenter
+    }
+//..........
 
     PhotoVideoControl {
         id:                     photoVideoControl

@@ -72,10 +72,11 @@ Item {
     Rectangle {
         id:             borderRect
         anchors.fill:   parent
-        radius:         width / 2
+        /*radius:         width / 2
         color:          qgcPal.window
         border.color:   qgcPal.text
-        border.width:   1
+        border.width:   1*/
+        opacity: 0.0
     }
 
     Item {
@@ -100,7 +101,7 @@ Item {
             }
         }
 
-        Image {
+       /* Image {
             id:                 nextWPPointer
             source:             isHeadingToNextWPOK() ? "/qmlimages/compassDottedLine.svg":"" 
             mipmap:             true
@@ -114,7 +115,7 @@ Item {
                 origin.y:       cOGPointer.height / 2
                 angle:         _angle
             }
-        }
+        }*/
 
         Image {
             id:                     homePointer
@@ -148,7 +149,7 @@ Item {
         }
 
 
-        QGCColoredImage {
+        /*QGCColoredImage {
             id:                 compassDial
             source:             "/qmlimages/compassInstrumentDial.svg"
             mipmap:             true
@@ -161,10 +162,10 @@ Item {
                 origin.y:       compassDial.height / 2
                 angle:          isNoseUpLocked()?-_heading:0
             }
-        }
+        }*/
 
 
-        Rectangle {
+        /*Rectangle {
             anchors.centerIn:   parent
             width:              size * 0.35
             height:             size * 0.2
@@ -183,7 +184,7 @@ Item {
                 property string _headingString2: _headingString.length === 1 ? "0" + _headingString : _headingString
                 property string _headingString3: _headingString2.length === 2 ? "0" + _headingString2 : _headingString2
             }
-        }
+        }*/
     }
 
     Rectangle {

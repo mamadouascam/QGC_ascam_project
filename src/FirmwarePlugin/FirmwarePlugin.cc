@@ -305,7 +305,8 @@ QString FirmwarePlugin::vehicleImageOutline(const Vehicle*) const
 
 QString FirmwarePlugin::vehicleImageCompass(const Vehicle*) const
 {
-    return QStringLiteral("/qmlimages/compassInstrumentArrow.svg");
+//    return QStringLiteral("/qmlimages/compassInstrumentArrow.svg");
+    return QStringLiteral("/qmlimages/compassInstrumentDoubleArrow.svg");
 }
 
 const QVariantList& FirmwarePlugin::toolIndicators(const Vehicle*)

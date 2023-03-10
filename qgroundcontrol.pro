@@ -435,6 +435,7 @@ HEADERS += \
     src/api/QGCSettings.h \
     src/api/QmlComponentInfo.h \
     src/GPS/Drivers/src/base_station.h \
+    src/ui/QGCPluginHost.h
 
 contains (DEFINES, QGC_ENABLE_PAIRING) {
     HEADERS += \
@@ -447,6 +448,7 @@ SOURCES += \
     src/api/QGCOptions.cc \
     src/api/QGCSettings.cc \
     src/api/QmlComponentInfo.cc \
+    src/ui/QGCPluginHost.cc
 
 contains (DEFINES, QGC_ENABLE_PAIRING) {
     SOURCES += \
@@ -1525,7 +1527,141 @@ contains (CONFIG, QGC_DISABLE_INSTALLER_SETUP) {
 }
 
 DISTFILES += \
-    src/QmlControls/QGroundControl/Specific/qmldir
+    src/FlightMap/CMakeLists.txt \
+    src/FlightMap/FlightMap.qml \
+    src/FlightMap/Images/AlertAircraft.svg \
+    src/FlightMap/Images/AwarenessAircraft.svg \
+    src/FlightMap/Images/Help.svg \
+    src/FlightMap/Images/HelpBlack.svg \
+    src/FlightMap/Images/Home.svg \
+    src/FlightMap/Images/MapAddMission.svg \
+    src/FlightMap/Images/MapAddMissionBlack.svg \
+    src/FlightMap/Images/MapCenter.svg \
+    src/FlightMap/Images/MapCenterBlack.svg \
+    src/FlightMap/Images/MapDrawShape.svg \
+    src/FlightMap/Images/MapHome.svg \
+    src/FlightMap/Images/MapHomeBlack.svg \
+    src/FlightMap/Images/MapSync.svg \
+    src/FlightMap/Images/MapSyncBlack.svg \
+    src/FlightMap/Images/MapSyncChanged.svg \
+    src/FlightMap/Images/MapType.svg \
+    src/FlightMap/Images/MapTypeBlack.svg \
+    src/FlightMap/Images/PiP.svg \
+    src/FlightMap/Images/ZoomMinus.svg \
+    src/FlightMap/Images/ZoomPlus.svg \
+    src/FlightMap/Images/adsbVehicle.svg \
+    src/FlightMap/Images/attitudeDial.svg \
+    src/FlightMap/Images/attitudeInstrument.svg \
+    src/FlightMap/Images/attitudePointer.svg \
+    src/FlightMap/Images/cOGPointer.svg \
+    src/FlightMap/Images/compassDottedLine.svg \
+    src/FlightMap/Images/compassInstrumentArrow.svg \
+    src/FlightMap/Images/compassInstrumentDoubleArrow.svg\
+    src/FlightMap/Images/compassInstrumentDial.svg \
+    src/FlightMap/Images/crossHair.svg \
+    src/FlightMap/Images/pipHide.svg \
+    src/FlightMap/Images/pipResize.svg \
+    src/FlightMap/Images/rollDialWhite.svg \
+    src/FlightMap/Images/rollPointerWhite.svg \
+    src/FlightMap/Images/scale.png \
+    src/FlightMap/Images/scaleLight.png \
+    src/FlightMap/Images/scale_end.png \
+    src/FlightMap/Images/scale_endLight.png \
+    src/FlightMap/Images/sub.png \
+    src/FlightMap/Images/vehicleArrowOpaque.svg \
+    src/FlightMap/Images/vehicleArrowOutline.svg \
+    src/FlightMap/MapItems/CMakeLists.txt \
+    src/FlightMap/MapItems/CameraTriggerIndicator.qml \
+    src/FlightMap/MapItems/CustomMapItems.qml \
+    src/FlightMap/MapItems/MissionItemIndicator.qml \
+    src/FlightMap/MapItems/MissionItemIndicatorDrag.qml \
+    src/FlightMap/MapItems/MissionItemView.qml \
+    src/FlightMap/MapItems/MissionLineView.qml \
+    src/FlightMap/MapItems/PlanMapItems.qml \
+    src/FlightMap/MapItems/PolygonEditor.qml \
+    src/FlightMap/MapItems/ProximityRadarMapView.qml \
+    src/FlightMap/MapItems/SplitIndicator.qml \
+    src/FlightMap/MapItems/VehicleMapItem.qml \
+    src/FlightMap/MapScale.qml \
+    src/FlightMap/QGCVideoBackground.qml \
+    src/FlightMap/Widgets/CMakeLists.txt \
+    src/FlightMap/Widgets/CenterMapDropButton.qml \
+    src/FlightMap/Widgets/CenterMapDropPanel.qml \
+    src/FlightMap/Widgets/CompassRing.qml \
+    src/FlightMap/Widgets/MapFitFunctions.qml \
+    src/FlightMap/Widgets/PhotoVideoControl.qml \
+    src/FlightMap/Widgets/QGCArtificialHorizon.qml \
+    src/FlightMap/Widgets/QGCAttitudeHUD.qml \
+    src/FlightMap/Widgets/QGCAttitudeWidget.qml \
+    src/FlightMap/Widgets/QGCCompassWidget.qml \
+    src/FlightMap/Widgets/QGCInstrumentWidget.qml \
+    src/FlightMap/Widgets/QGCInstrumentWidgetAlternate.qml \
+    src/FlightMap/Widgets/QGCMapToolButton.qml \
+    src/FlightMap/Widgets/QGCPitchIndicator.qml \
+    src/FlightMap/Widgets/QGCWaypointEditor.qml \
+    src/QmlControls/QGroundControl/Specific/qmldir \
+    src/ui/AppSettings.qml \
+    src/ui/CMakeLists.txt \
+    src/ui/ExitWithErrorWindow.qml \
+    src/ui/MainRootWindow.qml \
+    src/ui/preferences/BluetoothSettings.qml \
+    src/ui/preferences/CMakeLists.txt \
+    src/ui/preferences/DebugWindow.qml \
+    src/ui/preferences/GeneralSettings.qml \
+    src/ui/preferences/HelpSettings.qml \
+    src/ui/preferences/LinkSettings.qml \
+    src/ui/preferences/LogReplaySettings.qml \
+    src/ui/preferences/MavlinkSettings.qml \
+    src/ui/preferences/MockLink.qml \
+    src/ui/preferences/MockLinkSettings.qml \
+    src/ui/preferences/SerialSettings.qml \
+    src/ui/preferences/TcpSettings.qml \
+    src/ui/preferences/UdpSettings.qml \
+    src/ui/toolbar/ArmedIndicator.qml \
+    src/ui/toolbar/BatteryIndicator.qml \
+    src/ui/toolbar/CMakeLists.txt \
+    src/ui/toolbar/GPSIndicator.qml \
+    src/ui/toolbar/GPSRTKIndicator.qml \
+    src/ui/toolbar/Images/AirplaneIcon.svg \
+    src/ui/toolbar/Images/Analyze.svg \
+    src/ui/toolbar/Images/Armed.svg \
+    src/ui/toolbar/Images/Battery.svg \
+    src/ui/toolbar/Images/CameraIcon.svg \
+    src/ui/toolbar/Images/Connect.svg \
+    src/ui/toolbar/Images/Disarmed.svg \
+    src/ui/toolbar/Images/Disconnect.svg \
+    src/ui/toolbar/Images/Gears.svg \
+    src/ui/toolbar/Images/Gps.svg \
+    src/ui/toolbar/Images/Hamburger.svg \
+    src/ui/toolbar/Images/Joystick.png \
+    src/ui/toolbar/Images/Megaphone.svg \
+    src/ui/toolbar/Images/PaperPlane.svg \
+    src/ui/toolbar/Images/Plan.svg \
+    src/ui/toolbar/Images/Quad.svg \
+    src/ui/toolbar/Images/RC.svg \
+    src/ui/toolbar/Images/RTK.svg \
+    src/ui/toolbar/Images/Signal0.svg \
+    src/ui/toolbar/Images/Signal100.svg \
+    src/ui/toolbar/Images/Signal20.svg \
+    src/ui/toolbar/Images/Signal40.svg \
+    src/ui/toolbar/Images/Signal60.svg \
+    src/ui/toolbar/Images/Signal80.svg \
+    src/ui/toolbar/Images/TelemRSSI.svg \
+    src/ui/toolbar/Images/Yield.svg \
+    src/ui/toolbar/Images/roi.svg \
+    src/ui/toolbar/JoystickIndicator.qml \
+    src/ui/toolbar/LinkIndicator.qml \
+    src/ui/toolbar/MainStatusIndicator.qml \
+    src/ui/toolbar/MainToolBar.qml \
+    src/ui/toolbar/MainToolBarIndicators.qml \
+    src/ui/toolbar/MessageIndicator.qml \
+    src/ui/toolbar/ModeIndicator.qml \
+    src/ui/toolbar/MultiVehicleSelector.qml \
+    src/ui/toolbar/RCRSSIIndicator.qml \
+    src/ui/toolbar/ROIIndicator.qml \
+    src/ui/toolbar/SignalStrength.qml \
+    src/ui/toolbar/TelemetryRSSIIndicator.qml \
+    src/ui/toolbar/VTOLModeIndicator.qml
 
 #
 # Steps for "install" target on Linux
@@ -1545,3 +1681,7 @@ LinuxBuild {
 
     INSTALLS += target share_qgroundcontrol share_icons share_metainfo share_applications
 }
+
+FORMS += \
+    src/ui/QGCPluginHost.ui \
+    src/ui/QMap3D.ui

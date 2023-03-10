@@ -196,5 +196,10 @@
         <file alias="Yield.svg">src/ui/toolbar/Images/Yield.svg</file>
         <file alias="ZoomMinus.svg">src/FlightMap/Images/ZoomMinus.svg</file>
         <file alias="ZoomPlus.svg">src/FlightMap/Images/ZoomPlus.svg</file>
+        <file alias="compassInstrumentDoubleArrow.svg">src/FlightMap/Images/compassInstrumentDoubleArrow.svg</file>
+        <file alias="avionika.svg">src/FlightMap/Images/avionika.svg</file>
+        <file alias="antenna-red.svg">src/FlightMap/Images/antenna-red.svg</file>
+        <file alias="antenna-green.svg">src/FlightMap/Images/antenna-green.svg</file>
+        <file alias="antenna-yellow.svg">src/FlightMap/Images/antenna-yellow.svg</file>
     </qresource>
 </RCC>
